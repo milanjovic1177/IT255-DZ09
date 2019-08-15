@@ -1,0 +1,118 @@
+<nav class="navbar navbar-expand-sm navbar-light justify-content-center">
+
+    <a class="navbar-brand" href="#" style="padding-left: 12%; padding-right: 12%">
+        <img src="/assets/images/logo_jasmine.png" style="max-width:100%; height: 80%;">
+    </a>
+
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <ul class="navbar-nav">
+            <li class="nav-item active">
+                <a class="nav-link rounded-0 nav-link-top" href="#">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link rounded-0 nav-link-top" href="#">About</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link rounded-0 nav-link-top" href="#">Rooms</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link rounded-0 nav-link-top" href="#">Gallery</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link rounded-0 nav-link-top" href="#">Contact</a>
+            </li>
+        </ul>
+    </div>
+
+</nav>
+
+<div class="container-fluid" style="padding-left: 0px; padding-right: 0px; background-color: #f7f7f7;">
+
+    <div class="container-fluid " style="background: url('/assets/images/hotel_0.jpg'); background-size: cover; width:100%; height: 60vh; max-height: 850px;">
+
+        <div class="row justify-content-md-center h-100">
+            <div class="col-sm-4 " style="margin-top: auto; margin-bottom: auto;">
+                <div class="card" style="background-color: #f7f7f7;">
+
+                    <div class="card-body">
+                        <h4 class="card-title" style="color: darkslategray">Signup</h4>
+                        <form #regForm="ngForm" (ngSubmit)="register(regForm)">
+                            <div class="form-group">
+                                <label for="email">Email address:</label>
+                                <input type="email" value="$email" class="form-control" id="email" name="email" ngModel required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd">Password:</label>
+                                <input type="password" value="$password" class="form-control" id="pwd" name="pwd" ngModel required>
+                            </div>
+                            <div class="form-group">
+                                <label for="pwd_repeat">Repeat Password:</label>
+                                <input type="password" value="$password2" class="form-control" id="pwd_repeat" name="pwd_repeat" ngModel required>
+                            </div>
+
+                            <div *ngIf="pwds_not_equal"><div class="alert alert-danger"><strong>Error!</strong> Passwords not equal!</div></div>
+                            <div *ngIf="error_signing_up"><div class="alert alert-danger"><strong>Error!</strong> Account with this email already exist!</div></div>
+
+                            <button type="submit" class="btn btn-primary">Signup</button>
+                        </form>
+
+                        <br>
+
+                        <p style="color: darkslategray">Already have an account? <a [routerLink]="['/login']" class="card-link">Login</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="container room-cards-container" style="margin-top: 2rem">
+        <div class="row">
+            <div class="col-sm-4">
+                <div class="card img-fluid card-room">
+                    <img class="card-img-top card-room-image" src="/assets/images/room_1.jpg" alt="Room Image">
+                    <div class="card-img-overlay">
+                        <h4 class="card-title">Standard Room</h4>
+                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean eros tortor, bibendum non neque vel, fringilla fermentum sapien. Nunc sodales nunc massa.</p>
+                        <a href="#" class="btn btn-primary">Check availability</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card img-fluid card-room">
+                    <img class="card-img-top card-room-image" src="/assets/images/room_2.jpg" alt="Room Image">
+                    <div class="card-img-overlay">
+                        <h4 class="card-title">Deluxe Room</h4>
+                        <p class="card-text">Curabitur elementum, orci sit amet pretium ullamcorper, neque nisl elementum justo, eget porttitor massa sapien eget est. Donec egestas dui tellus.</p>
+                        <a href="#" class="btn btn-primary">Check availability</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-sm-4">
+                <div class="card img-fluid card-room">
+                    <img class="card-img-top card-room-image" src="/assets/images/room_3.jpg" alt="Room Image">
+                    <div class="card-img-overlay">
+                        <h4 class="card-title">Premium Suite</h4>
+                        <p class="card-text">Nam auctor efficitur neque suscipit scelerisque. Sed rutrum maximus ipsum. Mauris auctor ultrices elit, eget convallis ligula mollis eget.</p>
+                        <a href="#" class="btn btn-primary">Check availability</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <div class="row" style="background-color: #171422; height: 15vh;">
+        <div class="col-sm-12" style="display: flex; align-items: center;">
+            <div class="container">
+                <p class="text-center" style="color: rgba(255, 255, 255, 0.4); font-size: 1rem;"> © 2019 Jasmine Hotel. All rights reserved. Design by Milan Jović - 1177</p>
+            </div>
+        </div>
+    </div>
+</div>
